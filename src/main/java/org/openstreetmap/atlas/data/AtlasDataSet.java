@@ -19,7 +19,6 @@ import java.util.stream.Stream;
 
 import org.openstreetmap.josm.data.DataSource;
 import org.openstreetmap.josm.data.osm.BBox;
-import org.openstreetmap.josm.data.osm.DataIntegrityProblemException;
 import org.openstreetmap.josm.data.osm.DataSelectionListener;
 import org.openstreetmap.josm.data.osm.DataSelectionListener.SelectionAddEvent;
 import org.openstreetmap.josm.data.osm.DataSelectionListener.SelectionChangeEvent;
@@ -136,7 +135,7 @@ public final class AtlasDataSet
     {
         if (getPrimitiveById(primitive) != null)
         {
-            throw new DataIntegrityProblemException(
+            System.out.println(
                     tr("Unable to add primitive {0} to the dataset because it is already included",
                             primitive.toString()));
         }
